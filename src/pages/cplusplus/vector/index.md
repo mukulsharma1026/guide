@@ -112,13 +112,29 @@ for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
     cout<<*it<<endl; //Will print out string that the iterator is currently ppointing to
 }
 ```
+### Getting size of the vector
+This is the number of actual objects held in the vector, which is not necessarily equal to its storage capacity.here 'size()' function returns the size of the vector (the number of positions in the vector).
+```cpp
+  vector<int> v;
+  cout << "0. size: " << v.size() << '\n';
+
+  for (int i=0; i<10; i++)v.push_back(i);
+  cout << "1. size: " << v.size() << '\n';
+
+  v.insert (v.end(),10,100);
+  cout << "2. size: " << v.size() << '\n';
+
+  v.pop_back();
+  cout << "3. size: " << v.size() << '\n';
+
+```
+
 From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with it's order as you please!
 
 ### Some useful member functions
 The standard template library (STL) also provide different *methods* for you:
 
 ```cpp
-std::vector.size(); // returns the size of the vector (the number of positions in the vector)
 std::vector.begin(); // returns an iterator which is a pointer to the beginning of the vector
 std::vector.end(); // returns an iterator which is a pointer to the end of the vector
 std::vector.empty(); // returns true if the vector is empty, otherwise returns false.
